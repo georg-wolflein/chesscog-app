@@ -1,4 +1,5 @@
 from fastapi import FastAPI, File
+from fastapi.responses import RedirectResponse
 import cv2
 import numpy as np
 from enum import Enum
@@ -10,7 +11,7 @@ from chesscog.recognition import ChessRecognizer
 
 from __version__ import __version__ as api_version
 
-app = FastAPI()
+app = FastAPI(title="Chess Recognition API", version=api_version)
 recognizer = ChessRecognizer()
 
 
@@ -23,6 +24,10 @@ class Prediction(BaseModel):
     fen: str
     lichess_url: str
 
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse("docs")
 
 @app.get("/version")
 def version():

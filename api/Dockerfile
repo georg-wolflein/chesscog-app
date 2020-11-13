@@ -1,8 +1,8 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
 # Set environment variables
-env MAX_WORKERS 1
-env WEB_CONCURRENCY 1
+ENV MAX_WORKERS 1
+ENV WEB_CONCURRENCY 1
 
 # OpenGL is needed for OpenCV
 RUN apt update && apt install -y libgl1-mesa-glx
