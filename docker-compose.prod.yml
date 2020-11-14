@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  api:
+    build:
+      context: api
+  app:
+    depends_on: [api]
+    build:
+      context: app
+      dockerfile: docker/prod.Dockerfile
+    ports:
+      - "80:80"

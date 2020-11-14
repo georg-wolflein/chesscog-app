@@ -5,8 +5,6 @@ WORKDIR /app
 COPY package-lock.json package.json tsconfig.json ./
 RUN npm install
 
-EXPOSE 3000
-
 VOLUME /app/src
 VOLUME /app/public
 
