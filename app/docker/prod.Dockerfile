@@ -12,7 +12,6 @@ RUN npm run build
 
 # Production environment
 FROM nginx:stable-alpine
-RUN cat /etc/nginx/conf.d/default.conf
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 
