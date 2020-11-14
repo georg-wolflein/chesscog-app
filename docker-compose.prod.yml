@@ -3,6 +3,7 @@ services:
   api:
     build:
       context: api
+      dockerfile: docker/Dockerfile
   app:
     depends_on: [api]
     build:

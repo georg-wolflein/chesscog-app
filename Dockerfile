@@ -1,3 +1,6 @@
+# Rather messy Dockerfile for deployment with heroku. 
+# To stay on the free tier, the backend and the frontend need to be crammed into one Docker container.
+
 # Build environment
 FROM node:15.2.0 AS app_build
 WORKDIR /app
@@ -35,14 +38,10 @@ RUN poetry run python -m chesscog.occupancy_classifier.download_model && \
     poetry run python -m chesscog.piece_classifier.download_model
 
 # Setup frontend
-COPY app/docker/heroku_nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=app_build /app/build /usr/share/nginx/html
+COPY app/docker/heroku_nginx_template.conf nginx_template.conf
 
 # Copy the backend
 COPY ./api/app /app
 
-EXPOSE 80
-
-STOPSIGNAL SIGINT
-
-CMD nginx && /start.sh
+CMD cp nginx_template.conf /etc/nginx/nginx.conf && sed -i "s/_PORT_/$PORT/g" /etc/nginx/nginx.conf && nginx && PORT=3000 /start.sh
