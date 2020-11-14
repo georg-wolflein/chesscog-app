@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "chess-recognition-api"
 version = "0.1.0"
-description = ""
+description = "Chess recognition backend API"
 authors = ["Georg Wölflein <georgw7777@gmail.com>"]
 
 [tool.poetry.dependencies]
