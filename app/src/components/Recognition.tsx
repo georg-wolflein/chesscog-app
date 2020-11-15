@@ -1,7 +1,8 @@
 import React from "react";
 import "./Recognition.css";
 import Container from "react-bootstrap/Container";
-import Version from "./Version";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { API, IPrediction } from "../core/api";
 import FileUpload from "./FileUpload";
 
@@ -24,15 +25,20 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
     return (
       <section className="Recognition">
         <Container>
-          <FileUpload onUpload={this.performPrediction.bind(this)} />
-          {this.state.prediction && (
-            <img
-              src={`data:image/svg+xml;utf8,${encodeURIComponent(
-                this.state.prediction.svg
-              )}`}
-            />
-          )}
-          <Version />
+          <Row>
+            <Col>
+              <FileUpload onUpload={this.performPrediction.bind(this)} />
+            </Col>
+            <Col>
+              {this.state.prediction && (
+                <img
+                  src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                    this.state.prediction.svg
+                  )}`}
+                />
+              )}
+            </Col>
+          </Row>
         </Container>
       </section>
     );

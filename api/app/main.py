@@ -12,7 +12,10 @@ import logging
 from chesscog import __version__ as chesscog_version
 from chesscog.recognition import ChessRecognizer
 
-from .__version__ import __version__ as api_version
+try:
+    from .__version__ import __version__ as api_version
+except ImportError:
+    from __version__ import __version__ as api_version
 
 app = FastAPI(title="Chess Recognition API",
               version=api_version,

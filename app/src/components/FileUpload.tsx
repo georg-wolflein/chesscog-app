@@ -1,7 +1,6 @@
 import React from "react";
 import "./FileUpload.css";
 import classnames from "classnames";
-import { getPrediction } from "../core/api";
 
 interface FileUploadProps {
   onUpload?(file: File): void;

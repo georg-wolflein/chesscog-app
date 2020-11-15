@@ -1,3 +1,8 @@
+.App {
+  background: rgb(40, 44, 52);
+  color: white;
+}
+
 .App-header {
   text-align: center;
   background: linear-gradient(
@@ -6,7 +11,7 @@
       rgba(40, 44, 52, 0.75) 80%,
       rgba(40, 44, 52, 1) 100%
     ),
-    url(./chess-background.jpg);
+    url(../assets/chess-background.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -67,4 +72,17 @@
   color: #ff8a00;
   min-height: 100vh;
   padding-top: 10vh;
+}
+
+.App-footer {
+  min-height: 20vh;
+  background-color: #000;
+  padding: 1em 0;
+  background-color: #8a4a0b;
+  font-size: calc(10px + 1vmin);
+}
+
+.App-footer a {
+  color: #ffa600;
+  text-decoration: none;
 }

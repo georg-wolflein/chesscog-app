@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { API, IVersion } from "../core/api";
-import { version } from "process";
 
 export default class Version extends React.Component<{}, IVersion> {
   componentDidMount() {
