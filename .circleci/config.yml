@@ -18,7 +18,13 @@ jobs:
             - /home/circleci/.npm
       - run:
           name: Run Tests
-          command: npm test
+          command: npm run test:ci
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+      - store_test_results:
+          path: ./reports/junit/
+      - store_artifacts:
+          path: ./reports/junit
   test_api:
     working_directory: ~/chess-recognition-app/api
     docker:
@@ -51,5 +57,5 @@ workflows:
   version: 2
   workflow:
     jobs:
-    - test_app
-    - test_api
+      - test_app
+      - test_api
