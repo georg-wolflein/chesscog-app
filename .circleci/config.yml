@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  test_app:
     working_directory: ~/chess-recognition-app/app
     docker:
       - image: circleci/node:15
@@ -19,3 +19,37 @@ jobs:
       - run:
           name: Run Tests
           command: npm test
+  test_api:
+    working_directory: ~/chess-recognition-app/api
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout:
+          path: ~/chess-recognition-app
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
+      - restore_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "poetry.lock" }}
+      - run:
+          command: |
+            sudo pip install poetry
+            poetry install
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "poetry.lock" }}
+          paths:
+            - "~/.cache/pypoetry/virtualenvs"
+      - run:
+          command: |
+            mkdir test-results
+            poetry run python -m pytest --junitxml=test-results/junit.xml
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: tr1
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - test_app
+    - test_api
