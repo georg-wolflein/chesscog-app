@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File
+from fastapi import FastAPI, File, HTTPException
 from fastapi.responses import RedirectResponse
 import cv2
 import numpy as np
@@ -7,16 +7,22 @@ import chess
 import chess.svg
 from pydantic import BaseModel
 import typing
+import logging
 
 from chesscog import __version__ as chesscog_version
 from chesscog.recognition import ChessRecognizer
 
-from __version__ import __version__ as api_version
+from .__version__ import __version__ as api_version
 
 app = FastAPI(title="Chess Recognition API",
               version=api_version,
               root_path="/api")
-recognizer = ChessRecognizer()
+
+try:
+    recognizer = ChessRecognizer()
+except Exception as e:
+    logging.error(f"Failed to load chess recognizer: {e}")
+    recognizer = None
 
 
 class Turn(str, Enum):
@@ -48,6 +54,8 @@ def version() -> Version:
 
 @app.post("/predict", response_model=Prediction, summary="Perform inference")
 def read_item(turn: Turn = Turn.WHITE, file: bytes = File(...)) -> Prediction:
+    if not recognizer:
+        raise HTTPException(status_code=501, detail="Chesscog not loaded")
     buffer = np.frombuffer(file, np.uint8)
     img = cv2.imdecode(buffer, cv2.IMREAD_COLOR)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
