@@ -1,6 +1,6 @@
 .App {
   background: rgb(40, 44, 52);
-  color: white;
+  color: #f0d9b5;
 }
 
 .App-header {
@@ -78,11 +78,11 @@
   min-height: 20vh;
   background-color: #000;
   padding: 1em 0;
-  background-color: #8a4a0b;
+  background-color: #6d4727;
   font-size: calc(10px + 1vmin);
 }
 
 .App-footer a {
-  color: #ffa600;
+  color: #ff8a00;
   text-decoration: none;
 }

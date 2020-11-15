@@ -1,12 +1,14 @@
 .FileUpload {
-  background-color: #8a4a0b;
+  background-color: #6d4727;
   border-radius: 10px;
   padding: 8px;
+  min-height: 30vh;
+  height: 100%;
 }
 
 .FileUpload-upload {
-  border: 2px dashed #ff8a00;
-  min-height: 30vh;
+  height: 100%;
+  border: 2px dashed #f0d9b5;
   border-radius: 10px;
   display: flex;
   justify-content: center;

@@ -8,7 +8,6 @@ export interface IPrediction {
   fen: string;
   lichess_url: string;
   corners: Array<string>;
-  svg: string;
 }
 
 export interface IVersion {

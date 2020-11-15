@@ -9,9 +9,16 @@ export default class Version extends React.Component<{}, IVersion> {
   render() {
     return (
       <span>
-        {this.state
-          ? `chesscog v${this.state.chesscog}, chesscog-api v${this.state.api}`
-          : "loading..."}
+        {this.state ? (
+          <span>
+            {" "}
+            chesscog v{this.state.chesscog}
+            <br />
+            chesscog-api v{this.state.api}
+          </span>
+        ) : (
+          "loading..."
+        )}
       </span>
     );
   }
