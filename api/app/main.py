@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 from enum import Enum
 import chess
-import chess.svg
 from pydantic import BaseModel
 import typing
 import logging
@@ -42,7 +41,6 @@ class Prediction(BaseModel):
     fen: str
     lichess_url: str
     corners: typing.List[typing.List[int]]
-    svg: str
 
 
 @app.get("/", include_in_schema=False)
@@ -66,5 +64,4 @@ def read_item(turn: Turn = Turn.WHITE, file: bytes = File(...)) -> Prediction:
     fen = board.board_fen()
     return Prediction(fen=fen,
                       lichess_url=f"https://lichess.org/editor/{fen}",
-                      corners=corners.tolist(),
-                      svg=chess.svg.board(board, orientation=turn == Turn.WHITE))
+                      corners=corners.tolist())
