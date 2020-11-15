@@ -2,7 +2,7 @@ import React from "react";
 import "./Recognition.css";
 import Container from "react-bootstrap/Container";
 import Version from "./Version";
-import { getPrediction, IPrediction } from "../core/api";
+import { API, IPrediction } from "../core/api";
 import FileUpload from "./FileUpload";
 
 interface RecognitionProps {}
@@ -17,7 +17,7 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
   }
 
   performPrediction(file: File) {
-    getPrediction(file).then((prediction) => this.setState({ prediction }));
+    API.getPrediction(file).then((prediction) => this.setState({ prediction }));
   }
 
   render() {
