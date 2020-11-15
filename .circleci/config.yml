@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  app_tests:
     working_directory: ~/chess-recognition-app/app
     docker:
       - image: circleci/node:15
