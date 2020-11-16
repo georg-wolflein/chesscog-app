@@ -39,7 +39,6 @@ class Version(BaseModel):
 
 class Prediction(BaseModel):
     fen: str
-    lichess_url: str
     corners: typing.List[typing.List[int]]
 
 
@@ -63,5 +62,4 @@ def read_item(turn: Turn = Turn.WHITE, file: bytes = File(...)) -> Prediction:
     board, corners = recognizer.predict(img, turn == Turn.WHITE)
     fen = board.board_fen()
     return Prediction(fen=fen,
-                      lichess_url=f"https://lichess.org/editor/{fen}",
                       corners=corners.tolist())
