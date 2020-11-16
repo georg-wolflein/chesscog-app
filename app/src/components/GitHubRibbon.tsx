@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as GitHubCorner } from "../assets/github-corner.svg";
-import "./GitHubRibbon.css";
+import "./GitHubRibbon.scss";
 
 export default function GiHubRibbon() {
   return (

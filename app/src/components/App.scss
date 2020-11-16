@@ -1,0 +1,68 @@
+@import "styles/colors";
+
+.App {
+  background: $background-color;
+  color: $foreground-color;
+}
+
+.App-header {
+  text-align: center;
+  background: linear-gradient(
+      to bottom,
+      rgba(40, 44, 52, 0.75) 0%,
+      rgba(40, 44, 52, 0.75) 80%,
+      rgba(40, 44, 52, 1) 100%
+    ),
+    url(../assets/chess-background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  p {
+    font-weight: 200;
+  }
+
+  h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: calc(15px + 5vmin);
+  }
+
+  hr {
+    border-color: $highlight-color;
+    min-width: 7rem;
+    border-width: 0.5rem;
+  }
+}
+
+.App-learn-more {
+  padding: calc(10px + 1vmin) calc(20px + 2vmin);
+  box-shadow: 0 0 20px #eee;
+  border-radius: calc(20px + 3vmin);
+  font-size: calc(13px + 2vmin);
+  margin-top: 10vh;
+}
+
+.App-main {
+  min-height: 100vh;
+  padding-top: 10vh;
+}
+
+.App-footer {
+  min-height: 20vh;
+  padding: 1em 0;
+  background-color: $background-dark;
+  font-size: calc(10px + 1vmin);
+  a {
+    color: $highlight-color;
+    text-decoration: none;
+  }
+}

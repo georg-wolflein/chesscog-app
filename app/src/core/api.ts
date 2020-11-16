@@ -6,8 +6,7 @@ const api = axios.create({
 
 export interface IPrediction {
   fen: string;
-  lichess_url: string;
-  corners: Array<string>;
+  corners: Array<Array<number>>;
 }
 
 export interface IVersion {

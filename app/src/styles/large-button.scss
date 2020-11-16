@@ -1,0 +1,24 @@
+.large-button {
+  background-color: #ff8a00;
+  border-color: transparent;
+  background-image: linear-gradient(to top left, #ff8a00, #e52e71, #ff8a00);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% 200%;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+
+  font-size: calc(13px + 2vmin);
+  border-radius: calc(20px);
+  padding: calc(10px + 1vmin) calc(20px + 2vmin);
+
+  &:hover {
+    background-color: #e52e71;
+    background-position: right bottom;
+    border-color: transparent;
+    color: #fff;
+    text-decoration: none;
+  }
+}

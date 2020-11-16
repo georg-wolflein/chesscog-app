@@ -1,0 +1,12 @@
+@import "styles/colors.scss";
+
+$theme-colors: (
+  "primary": $background-dark,
+  "secondary": $highlight-color,
+);
+
+$yiq-text-dark: $background-dark;
+$yiq-text-light: $foreground-color;
+$border-radius-lg: 10px;
+
+@import "~bootstrap/scss/bootstrap";

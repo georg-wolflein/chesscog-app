@@ -56,3 +56,24 @@
   > div:first-child {
   border-radius: 0 0 0 10px;
 }
+
+.btn-group-block {
+  display: flex;
+  .btn {
+    flex: 1;
+  }
+}
+
+.Recognition-lichess {
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../assets/lichess-logo.png");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.Recognition-control {
+  padding-top: 4px;
+}

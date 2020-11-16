@@ -11,6 +11,7 @@ RUN npm install
 
 COPY app/public/ public/
 COPY app/src/ src/
+COPY app/.env .env
 RUN npm run build
 
 # Production environment

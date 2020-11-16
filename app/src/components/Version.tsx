@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { API, IVersion } from "../core/api";
 
 export default class Version extends React.Component<{}, IVersion> {

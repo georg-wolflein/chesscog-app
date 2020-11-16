@@ -1,5 +1,7 @@
+@import "styles/colors";
+
 .FileUpload {
-  background-color: #6d4727;
+  background-color: $background-dark;
   border-radius: 10px;
   padding: 8px;
   min-height: 30vh;
@@ -8,7 +10,7 @@
 
 .FileUpload-upload {
   height: 100%;
-  border: 2px dashed #f0d9b5;
+  border: 2px dashed $foreground-color;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -41,7 +43,7 @@
 }
 
 .FileUpload-file + label:hover b {
-  color: #ff8a00;
+  color: $highlight-color;
 }
 
 .FileUpload-file + label * {

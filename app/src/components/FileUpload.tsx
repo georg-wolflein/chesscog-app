@@ -1,5 +1,5 @@
 import React from "react";
-import "./FileUpload.css";
+import "./FileUpload.scss";
 import classnames from "classnames";
 
 interface FileUploadProps {

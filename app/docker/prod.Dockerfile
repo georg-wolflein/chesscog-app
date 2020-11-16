@@ -6,6 +6,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package-lock.json package.json tsconfig.json ./
 RUN npm install
 
+COPY .env .env
 COPY public/ public/
 COPY src/ src/
 RUN npm run build
