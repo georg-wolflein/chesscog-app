@@ -134,6 +134,7 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                             prediction: undefined,
                           }))
                         }
+                        disabled={this.state.loading}
                       >
                         Reset
                       </Button>
