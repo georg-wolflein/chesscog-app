@@ -17,6 +17,7 @@ interface RecognitionState {
   loading: boolean;
   componentWidth: number;
   turn: Turn;
+  error?: string;
 }
 
 class Recognition extends React.Component<RecognitionProps, RecognitionState> {
@@ -48,14 +49,22 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
     const file = this.state.image;
     if (!file) return;
     this.setState((state) => ({ ...state, loading: true }));
-    API.getPrediction(file, this.state.turn).then((prediction) =>
-      this.setState((state) => ({
-        ...state,
-        prediction,
-        image: file,
-        loading: false,
-      }))
-    );
+    API.getPrediction(file, this.state.turn)
+      .then((prediction) =>
+        this.setState((state) => ({
+          ...state,
+          prediction,
+          image: file,
+          loading: false,
+        }))
+      )
+      .catch(() =>
+        this.setState((state) => ({
+          ...state,
+          loading: false,
+          error: "Error: failed to infer the chess position.",
+        }))
+      );
   }
 
   render() {
@@ -132,6 +141,7 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                             loading: false,
                             image: undefined,
                             prediction: undefined,
+                            error: undefined,
                           }))
                         }
                         disabled={this.state.loading}
@@ -178,20 +188,25 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                 />
               )}
             </Col>
-            <Col lg className="Recognition-col Recognition-board-container">
-              <div className="Recognition-board">
-                <Chessboard
-                  calcWidth={() => this.dummyRef.current?.clientWidth || 100}
-                  position={this.state.prediction?.fen}
-                />
+            <Col lg className="Recognition-col">
+              <div className="Recognition-board-container">
+                <div className="Recognition-board">
+                  <Chessboard
+                    calcWidth={() => this.dummyRef.current?.clientWidth || 100}
+                    position={this.state.prediction?.fen}
+                  />
+                </div>
+                <div className="Recognition-loader">
+                  <BounceLoader
+                    size={200}
+                    color={"#ff8a00"}
+                    loading={this.state.loading}
+                  />
+                </div>
               </div>
-              <div className="Recognition-loader">
-                <BounceLoader
-                  size={200}
-                  color={"#ff8a00"}
-                  loading={this.state.loading}
-                />
-              </div>
+              {this.state.error && (
+                <p className="Recognition-error">{this.state.error}</p>
+              )}
             </Col>
           </Row>
           <Row>
