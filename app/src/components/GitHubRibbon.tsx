@@ -8,6 +8,7 @@ export default function GiHubRibbon() {
       href="https://github.com/georgw777/chesscog"
       aria-label="View source on GitHub"
       target="_blank"
+      rel="noreferrer"
     >
       <GitHubCorner className="GitHubRibbon-corner" />
     </a>

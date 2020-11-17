@@ -147,18 +147,20 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                     }}
                   >
                     <Col>
-                      <a
+                      <button
                         className="large-button"
                         onClick={this.performPrediction.bind(this)}
+                        style={{ width: "100%" }}
                       >
                         Go
-                      </a>
+                      </button>
                     </Col>
                     {this.state.prediction && (
                       <Col xs={3}>
                         <a
                           href={`https://lichess.org/editor/${this.state.prediction.fen}`}
                           target="_blank"
+                          rel="noreferrer"
                         >
                           <div className="Recognition-lichess">
                             <span />

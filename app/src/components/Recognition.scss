@@ -77,3 +77,14 @@
 .Recognition-control {
   padding-top: 4px;
 }
+
+.Recognition {
+  .btn,
+  .large-button,
+  .Recognition-lichess {
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

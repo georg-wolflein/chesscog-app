@@ -49,6 +49,11 @@
   border-radius: calc(20px + 3vmin);
   font-size: calc(13px + 2vmin);
   margin-top: 10vh;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 
 .App-main {

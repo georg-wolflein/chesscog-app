@@ -6,16 +6,29 @@ interface FileUploadProps {
   onUpload?(file: File): void;
 }
 interface FileUploadState {
-  dragging: boolean;
+  dragging: { [key: string]: boolean };
 }
 
 export default class FileUpload extends React.Component<
   FileUploadProps,
   FileUploadState
 > {
+  private dragListeners: { [key: string]: React.DragEventHandler<Element> };
+
   constructor(props: FileUploadProps) {
     super(props);
-    this.state = { dragging: false };
+    this.state = { dragging: {} };
+    this.startDragging.bind(this);
+    this.stopDragging.bind(this);
+    this.drop.bind(this);
+    this.changeFile.bind(this);
+    this.dragListeners = {
+      onDragOver: this.startDragging,
+      onDragEnter: this.startDragging,
+      onDragEnd: this.stopDragging,
+      onDragLeave: this.stopDragging,
+      onDrop: this.drop,
+    };
   }
 
   preventDefault: React.EventHandler<React.SyntheticEvent<Element>> = (e) => {
@@ -25,12 +38,17 @@ export default class FileUpload extends React.Component<
 
   startDragging: React.DragEventHandler<Element> = (e) => {
     this.preventDefault(e);
-    this.setState({ dragging: true });
+    this.setState(({ dragging }) => ({
+      dragging: { ...dragging, [(e.target as Element).id]: true },
+    }));
   };
 
   stopDragging: React.DragEventHandler<Element> = (e) => {
     this.preventDefault(e);
-    this.setState({ dragging: false });
+    const target = e.target as Element;
+    this.setState(({ dragging }) => ({
+      dragging: { ...dragging, [(e.target as Element).id]: false },
+    }));
   };
 
   drop: React.DragEventHandler<Element> = (e) => {
@@ -49,32 +67,28 @@ export default class FileUpload extends React.Component<
     return (
       <div
         className={classnames("FileUpload", {
-          "is-dragover": this.state.dragging,
+          "is-dragover": Object.values(this.state.dragging).some((x) => x),
         })}
-        onDragOver={this.startDragging.bind(this)}
-        onDragEnter={this.startDragging.bind(this)}
-        onDragEnd={this.startDragging.bind(this)}
-        onDragLeave={this.startDragging.bind(this)}
-        onDrop={this.drop.bind(this)}
+        {...this.dragListeners}
+        id="Fileupload"
       >
-        <div className="FileUpload-upload">
+        <div
+          className="FileUpload-upload"
+          {...this.dragListeners}
+          id="Fileupload-upload"
+        >
           <div className="FileUpload-input">
             <input
               className="FileUpload-file"
               type="file"
               name="file"
               id="file"
-              onChange={this.changeFile.bind(this)}
+              onChange={this.changeFile}
             />
             <label htmlFor="file">
               <b>Choose a file</b>
               <span className="FileUpload-dragndrop"> or drag it here</span>.
             </label>
-          </div>
-          <div className="FileUpload-uploading">Uploading…</div>
-          <div className="FileUpload-success">Done!</div>
-          <div className="FileUpload-error">
-            Error! <span></span>.
           </div>
         </div>
       </div>

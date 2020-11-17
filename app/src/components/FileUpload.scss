@@ -17,8 +17,26 @@
   align-items: center;
 }
 
-.FileUpload-upload-container.is-dragover {
-  background-color: red;
+@keyframes Fileupload-dragover {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 1500%;
+  }
+}
+
+.FileUpload.is-dragover {
+  background-image: radial-gradient(
+    circle,
+    #c77f41,
+    #c77f41 10%,
+    transparent 10%
+  );
+  background-position: center;
+  background-size: 1500%;
+  animation-name: Fileupload-dragover;
+  animation-duration: 1s;
 }
 
 .FileUpload-uploading,

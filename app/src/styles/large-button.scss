@@ -1,6 +1,6 @@
 .large-button {
   background-color: #ff8a00;
-  border-color: transparent;
+  border: 0;
   background-image: linear-gradient(to top left, #ff8a00, #e52e71, #ff8a00);
   text-align: center;
   text-transform: uppercase;
@@ -14,11 +14,17 @@
   border-radius: calc(20px);
   padding: calc(10px + 1vmin) calc(20px + 2vmin);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #e52e71;
     background-position: right bottom;
-    border-color: transparent;
+    border: 0;
+    outline: 0;
     color: #fff;
     text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale(0.99);
   }
 }
