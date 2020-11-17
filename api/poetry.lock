@@ -92,12 +92,13 @@ version = "1.3.0"
 [[package]]
 category = "main"
 description = ""
-name = "chess-recognition"
+name = "chesscog"
 optional = false
 python-versions = "^3.7"
-version = "0.1.1"
+version = "0.2.0"
 
 [package.dependencies]
+googledrivedownloader = "^0.4"
 matplotlib = "^3.3.2"
 numpy = "^1.19.2"
 opencv-python = "^4.4.0"
@@ -113,10 +114,9 @@ tqdm = "^4.51.0"
 yacs = "^0.1.8"
 
 [package.source]
-reference = "72b381156c8e4b02af7c4524c5506872cb1161e6"
+reference = "9148afff41cd56488564931676be5186afbf8fda"
 type = "git"
-url = "https://github.com/georgw777/chess-recognition.git"
-
+url = "https://github.com/georgw777/chesscog.git"
 [[package]]
 category = "dev"
 description = "Cross-platform colored terminal text."
@@ -198,6 +198,14 @@ requests-oauthlib = ">=0.7.0"
 
 [package.extras]
 tool = ["click"]
+
+[[package]]
+category = "main"
+description = "Minimal class to download shared files from Google Drive."
+name = "googledrivedownloader"
+optional = false
+python-versions = "*"
+version = "0.4"
 
 [[package]]
 category = "main"
@@ -706,10 +714,10 @@ description = "Fast, Extensible Progress Meter"
 name = "tqdm"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
-version = "4.51.0"
+version = "4.52.0"
 
 [package.extras]
-dev = ["py-make (>=0.1.0)", "twine", "argopt", "pydoc-markdown"]
+dev = ["py-make (>=0.1.0)", "twine", "argopt", "pydoc-markdown", "wheel"]
 
 [[package]]
 category = "main"
@@ -768,7 +776,7 @@ version = "0.1.8"
 PyYAML = "*"
 
 [metadata]
-content-hash = "87cc49e3ff6ffb5c3bcf716b29278b4555e7597d00e54d0ac0f49a827923cd20"
+content-hash = "e8865ed6c558961bea20e827c9e130ceeb5ed7c03a6bf19667601f5648e1d055"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -808,7 +816,7 @@ chess = [
     {file = "chess-1.3.0-py3-none-any.whl", hash = "sha256:23185e5a16f2b26ef7817d1776c7093d0e331774e9dace7e7ce468f9591ac1c7"},
     {file = "chess-1.3.0.tar.gz", hash = "sha256:fd33a6c904e64aea327225ffa779b66f8c50887f769105168b1d22df4934ad2b"},
 ]
-chess-recognition = []
+chesscog = []
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
@@ -831,6 +839,10 @@ google-auth = [
 google-auth-oauthlib = [
     {file = "google-auth-oauthlib-0.4.2.tar.gz", hash = "sha256:65b65bc39ad8cab15039b35e5898455d3d66296d0584d96fe0e79d67d04c51d9"},
     {file = "google_auth_oauthlib-0.4.2-py2.py3-none-any.whl", hash = "sha256:d4d98c831ea21d574699978827490a41b94f05d565c617fe1b420e88f1fc8d8d"},
+]
+googledrivedownloader = [
+    {file = "googledrivedownloader-0.4-py2.py3-none-any.whl", hash = "sha256:26ef906c4a038de6fb36f375b0cb0af6f0b6d7ea9ce019a3a08abc50fd6a3b73"},
+    {file = "googledrivedownloader-0.4.tar.gz", hash = "sha256:4b34c1337b2ff3bf2bd7581818efbdcaea7d50ffd484ccf80809688f5ca0e204"},
 ]
 grpcio = [
     {file = "grpcio-1.33.2-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:c5030be8a60fb18de1fc8d93d130d57e4296c02f229200df814f6578da00429e"},
@@ -1332,8 +1344,8 @@ torchvision = [
     {file = "torchvision-0.7.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:cfa2b367bc9acf20f18b151d0525970279719e81969c17214effe77245875354"},
 ]
 tqdm = [
-    {file = "tqdm-4.51.0-py2.py3-none-any.whl", hash = "sha256:9ad44aaf0fc3697c06f6e05c7cf025dd66bc7bcb7613c66d85f4464c47ac8fad"},
-    {file = "tqdm-4.51.0.tar.gz", hash = "sha256:ef54779f1c09f346b2b5a8e5c61f96fbcb639929e640e59f8cf810794f406432"},
+    {file = "tqdm-4.52.0-py2.py3-none-any.whl", hash = "sha256:80d9d5165d678dbd027dd102dfb99f71bf05f333b61fb761dbba13b4ab719ead"},
+    {file = "tqdm-4.52.0.tar.gz", hash = "sha256:18d6a615aedd09ec8456d9524489dab330af4bd5c2a14a76eb3f9a0e14471afe"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.2-py2.py3-none-any.whl", hash = "sha256:d8ff90d979214d7b4f8ce956e80f4028fc6860e4431f731ea4a8c08f23f99473"},

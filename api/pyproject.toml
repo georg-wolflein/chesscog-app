@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "chess-recognition-api"
+name = "chesscog-api"
 version = "0.1.0"
 description = "Chess recognition backend API"
 authors = ["Georg Wölflein <georgw7777@gmail.com>"]
@@ -11,7 +11,7 @@ python-chess = "^1.999"
 python-multipart = "^0.0.5"
 opencv-python = "^4.4.0"
 numpy = "^1.19.4"
-chess-recognition = {git = "https://github.com/georgw777/chess-recognition.git", rev = "v0.1.1"}
+chesscog = {git = "https://github.com/georgw777/chesscog.git", rev = "v0.2.0"}
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.4"

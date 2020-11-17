@@ -5,7 +5,7 @@ import "./GitHubRibbon.scss";
 export default function GiHubRibbon() {
   return (
     <a
-      href="https://github.com/georgw777/chess-recognition"
+      href="https://github.com/georgw777/chesscog"
       aria-label="View source on GitHub"
       target="_blank"
     >
