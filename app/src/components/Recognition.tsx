@@ -181,11 +181,25 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                   </Row>
                 </div>
               ) : (
-                <FileUpload
-                  onUpload={(file) =>
-                    this.setState((state) => ({ ...state, image: file }))
-                  }
-                />
+                <div style={{ height: "100%" }}>
+                  <FileUpload
+                    onUpload={(file) =>
+                      this.setState((state) => ({ ...state, image: file }))
+                    }
+                  />
+                  <p className="Recognition-help">
+                    Just want to try it out? The first 50 samples from the test
+                    set are available{" "}
+                    <a
+                      href="https://drive.google.com/drive/folders/1aJlt6MB7qnBUYKcUR4XIoH1WoxbkG3HA?usp=sharing"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      here
+                    </a>
+                    .
+                  </p>
+                </div>
               )}
             </Col>
             <Col lg className="Recognition-col">

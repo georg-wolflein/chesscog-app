@@ -45,4 +45,8 @@ COPY app/docker/heroku_nginx_template.conf nginx_template.conf
 # Copy the backend
 COPY ./api/app /app
 
-CMD cp nginx_template.conf /etc/nginx/nginx.conf && sed -i "s/_PORT_/$PORT/g" /etc/nginx/nginx.conf && nginx && PORT=3000 /start.sh
+# Entrypoint
+CMD cp nginx_template.conf /etc/nginx/nginx.conf && \
+    sed -i "s/_PORT_/$PORT/g" /etc/nginx/nginx.conf && \
+    nginx -g 'daemon off;' & \
+    PORT=3000 /start.sh

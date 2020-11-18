@@ -1,3 +1,5 @@
+@import "styles/colors";
+
 .Recognition {
   min-height: 80vh;
   padding-bottom: 30px;
@@ -93,4 +95,17 @@
   color: #d43b0b;
   font-weight: bold;
   font-size: calc(13px + 1vmin);
+}
+
+.Recognition-help {
+  font-size: calc(12px + 1vmin);
+  margin-top: 3px;
+
+  a {
+    color: $highlight-color;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
