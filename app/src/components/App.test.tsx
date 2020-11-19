@@ -4,8 +4,8 @@ import App from "./App";
 
 it("renders the try it out link", () => {
   render(<App />);
-  const linkElement = screen.getByText(/try it out/i);
-  expect(linkElement).toBeInTheDocument();
+  const linkElements = screen.getAllByText(/try it out/i);
+  expect(linkElements.length > 0);
 });
 
 it("renders the title", () => {
