@@ -45,7 +45,6 @@ export default class FileUpload extends React.Component<
 
   stopDragging: React.DragEventHandler<Element> = (e) => {
     this.preventDefault(e);
-    const target = e.target as Element;
     this.setState(({ dragging }) => ({
       dragging: { ...dragging, [(e.target as Element).id]: false },
     }));

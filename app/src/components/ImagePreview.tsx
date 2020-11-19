@@ -1,5 +1,4 @@
 import React from "react";
-import { updateArrayBindingPattern } from "typescript";
 
 interface ImagePreviewProps {
   file: File;
