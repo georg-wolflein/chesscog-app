@@ -38,3 +38,4 @@ jobs:
           commit-message: Bump chesscog version to ${{ github.event.client_payload.chesscog_version }}
           title: Bump chesscog version to ${{ github.event.client_payload.chesscog_version }}
           body: Automatically generated pull request by CI due to a new version of chesscog being released.
+          delete-branch: true
