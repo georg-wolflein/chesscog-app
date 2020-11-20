@@ -1,6 +1,6 @@
 name: build
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   node_js:
@@ -75,7 +75,7 @@ jobs:
 
   heroku_deploy:
     needs: [node_js, python, docker_compose]
-    if: github.ref == 'refs/heads/master'
+    if: (github.event_name == 'push') && (github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
 
     steps:
