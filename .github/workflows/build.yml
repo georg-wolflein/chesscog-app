@@ -72,6 +72,7 @@ jobs:
 
   heroku_deploy:
     needs: [node_js, python, docker_compose]
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
 
     steps:
