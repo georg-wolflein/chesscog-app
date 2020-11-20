@@ -12,6 +12,7 @@ export interface IPrediction {
 export interface IVersion {
   chesscog: string;
   api: string;
+  app: string;
 }
 
 export enum Turn {

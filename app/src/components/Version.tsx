@@ -10,10 +10,16 @@ export default class Version extends React.Component<{}, IVersion> {
       <span>
         {this.state ? (
           <span>
-            {" "}
             chesscog v{this.state.chesscog}
             <br />
             chesscog-api v{this.state.api}
+            <br />
+            chesscog-app{" "}
+            <a
+              href={`https://github.com/georgw777/chesscog-app/commit/${this.state.app}`}
+            >
+              @{this.state.app.substr(0, 7)}
+            </a>
           </span>
         ) : (
           "loading..."

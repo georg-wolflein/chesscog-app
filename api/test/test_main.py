@@ -10,4 +10,9 @@ def test_version():
     from chesscog import __version__ as chesscog_version
     response = client.get("/version")
     assert response.status_code == 200
-    assert response.json() == dict(api=api_version, chesscog=chesscog_version)
+    json = response.json()
+    assert "app" in json
+    assert "api" in json
+    assert "chesscog" in json
+    assert json["api"] == api_version
+    assert json["chesscog"] == chesscog_version

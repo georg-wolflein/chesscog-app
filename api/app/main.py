@@ -7,6 +7,7 @@ import chess
 from pydantic import BaseModel
 import typing
 import logging
+import os
 
 from chesscog import __version__ as chesscog_version
 from chesscog.recognition import ChessRecognizer
@@ -16,15 +17,17 @@ try:
 except ImportError:
     from __version__ import __version__ as api_version
 
-app = FastAPI(title="Chess Recognition API",
-              version=api_version,
-              root_path="/api")
-
 try:
     recognizer = ChessRecognizer()
 except Exception as e:
     logging.error(f"Failed to load chess recognizer: {e}")
     recognizer = None
+
+app_version = os.getenv("APP_VERSION", "dev")
+
+app = FastAPI(title="Chess Recognition API",
+              version=api_version,
+              root_path="/api")
 
 
 class Turn(str, Enum):
@@ -33,8 +36,9 @@ class Turn(str, Enum):
 
 
 class Version(BaseModel):
-    api: str
     chesscog: str
+    api: str
+    app: str
 
 
 class Prediction(BaseModel):
@@ -49,7 +53,7 @@ def root():
 
 @app.get("/version", response_model=Version, summary="Obtain version information")
 def version() -> Version:
-    return Version(api=api_version, chesscog=chesscog_version)
+    return Version(chesscog=chesscog_version, api=api_version, app=app_version)
 
 
 @app.post("/predict", response_model=Prediction, summary="Perform inference")
