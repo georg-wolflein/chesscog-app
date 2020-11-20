@@ -12,6 +12,7 @@ it("renders the correct version numbers", async () => {
     return Promise.resolve({
       chesscog: "1.2.3",
       api: "4.5.6",
+      app: "abc1234",
     });
   });
   render(<Version />);
@@ -19,6 +20,8 @@ it("renders the correct version numbers", async () => {
   expect(apiFunc).toHaveBeenCalled();
   const chesscogVersion = screen.getByText(/chesscog v1.2.3/i);
   const apiVersion = screen.getByText(/api v4.5.6/i);
+  const appVersion = screen.getByText(/@abc1234/i);
   expect(chesscogVersion).toBeInTheDocument();
   expect(apiVersion).toBeInTheDocument();
+  expect(appVersion).toBeInTheDocument();
 });
