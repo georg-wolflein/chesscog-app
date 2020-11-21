@@ -181,7 +181,13 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                   </Row>
                 </div>
               ) : (
-                <div style={{ height: "100%" }}>
+                <div
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <FileUpload
                     onUpload={(file) =>
                       this.setState((state) => ({ ...state, image: file }))
