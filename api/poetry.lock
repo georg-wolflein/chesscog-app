@@ -90,7 +90,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "0.2.0"
+version = "0.2.2"
 description = ""
 category = "main"
 optional = false
@@ -105,19 +105,18 @@ opencv-python = "^4.4.0"
 pandas = "^1.1.3"
 pillow = "^7.2.0"
 python-chess = "^1.1.0"
-pyyaml = "^5.3.1"
+recap = "^0.1.1"
 scikit-learn = "^0.23.2"
 tensorboard = "^2.3.0"
 torch = "^1.6.0"
 torchvision = "^0.7.0"
 tqdm = "^4.51.0"
-yacs = "^0.1.8"
 
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "0.2.1"
-resolved_reference = "8bfee789f3057436420911d7a9445fe0e6b7c66d"
+reference = "0.2.2"
+resolved_reference = "000508462914c8d5fad3466743f026180bbee87d"
 
 [[package]]
 name = "colorama"
@@ -539,6 +538,18 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "recap"
+version = "0.1.1"
+description = "Reproducible configurations for any project"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+pyyaml = ">=5.3.1,<6.0.0"
+yacs = ">=0.1.8,<0.2.0"
+
+[[package]]
 name = "requests"
 version = "2.25.0"
 description = "Python HTTP for Humans."
@@ -760,7 +771,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "058c696a1affdb7d626fcb2470b0e1a4164b4e1579eb85b676f1d28fb45fe49a"
+content-hash = "2bed345cfe1e6f8425d0e4e5b03eedfd0b173c3ae95bbe6d986e29dcd23f4e36"
 
 [metadata.files]
 absl-py = [
@@ -1232,6 +1243,10 @@ pyyaml = [
     {file = "PyYAML-5.3.1-cp39-cp39-win32.whl", hash = "sha256:ad9c67312c84def58f3c04504727ca879cb0013b2517c85a9a253f0cb6380c0a"},
     {file = "PyYAML-5.3.1-cp39-cp39-win_amd64.whl", hash = "sha256:6034f55dab5fea9e53f436aa68fa3ace2634918e8b5994d82f3621c04ff5ed2e"},
     {file = "PyYAML-5.3.1.tar.gz", hash = "sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"},
+]
+recap = [
+    {file = "recap-0.1.1-py3-none-any.whl", hash = "sha256:0af1432e55ce396e96f564cd50609791181c35e9b099235cc4092048fdece926"},
+    {file = "recap-0.1.1.tar.gz", hash = "sha256:863a1ff5291fd475661a39cf93a132b74cc28885c0beb60e02d7e7431e9f63ab"},
 ]
 requests = [
     {file = "requests-2.25.0-py2.py3-none-any.whl", hash = "sha256:e786fa28d8c9154e6a4de5d46a1d921b8749f8b74e28bde23768e5e16eece998"},
