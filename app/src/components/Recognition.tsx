@@ -9,6 +9,7 @@ import { ButtonGroup, ToggleButton, Button } from "react-bootstrap";
 import { API, IPrediction, Turn } from "../core/api";
 import FileUpload from "./FileUpload";
 import ImagePreview from "./ImagePreview";
+import resizeImage from "../utils/resize";
 
 interface RecognitionProps {}
 interface RecognitionState {
@@ -114,11 +115,11 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                           White to play
                         </ToggleButton>
                         <ToggleButton
-                          key="white"
+                          key="black"
                           type="radio"
                           variant="secondary"
                           name="radio"
-                          value="white"
+                          value="black"
                           checked={this.state.turn === Turn.Black}
                           onChange={() =>
                             this.setState((state) => ({
@@ -190,7 +191,12 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                 >
                   <FileUpload
                     onUpload={(file) =>
-                      this.setState((state) => ({ ...state, image: file }))
+                      resizeImage(file, 1200).then((resizedImage) =>
+                        this.setState((state) => ({
+                          ...state,
+                          image: resizedImage,
+                        }))
+                      )
                     }
                   />
                   <p className="Recognition-help">
