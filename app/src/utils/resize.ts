@@ -3,7 +3,7 @@ const blobToFile = (blob: Blob, fileName: string): File => {
   b.lastModifiedDate = new Date();
   b.name = fileName;
 
-  return <File>blob;
+  return blob as File;
 };
 
 export default function resizeImage(
