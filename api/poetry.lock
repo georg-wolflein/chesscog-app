@@ -90,7 +90,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "0.2.2"
+version = "0.2.3"
 description = ""
 category = "main"
 optional = false
@@ -115,8 +115,8 @@ tqdm = "^4.51.0"
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "0.2.2"
-resolved_reference = "000508462914c8d5fad3466743f026180bbee87d"
+reference = "0.2.3"
+resolved_reference = "7af91f4d99a63a3252ced9332a86bca27e507792"
 
 [[package]]
 name = "colorama"
@@ -771,7 +771,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "2bed345cfe1e6f8425d0e4e5b03eedfd0b173c3ae95bbe6d986e29dcd23f4e36"
+content-hash = "321ccbfdb306e70a4a7cc7706fe4adffcdd1c2dffe423eb617091d8e36828c1a"
 
 [metadata.files]
 absl-py = [
