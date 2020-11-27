@@ -68,7 +68,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: docker-compose -f docker-compose.prod.yml pull
       # - uses: satackey/action-docker-layer-caching@v0.0.8
       #   continue-on-error: true
       - run: docker-compose -f docker-compose.prod.yml build
