@@ -90,7 +90,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "0.2.5"
+version = "0.2.6"
 description = ""
 category = "main"
 optional = false
@@ -98,13 +98,13 @@ python-versions = "^3.7"
 develop = false
 
 [package.dependencies]
+chess = "^1.3.0"
 googledrivedownloader = "^0.4"
 matplotlib = "^3.3.2"
 numpy = "^1.19.2"
 opencv-python = "^4.4.0"
 pandas = "^1.1.3"
 pillow = "^7.2.0"
-python-chess = "^1.1.0"
 recap = "^0.1.1"
 scikit-learn = "^0.23.2"
 tensorboard = "^2.3.0"
@@ -115,8 +115,8 @@ tqdm = "^4.51.0"
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "0.2.5"
-resolved_reference = "2cc527d1424aff84809bca56cac78579946b18d4"
+reference = "0.2.6"
+resolved_reference = "d93ccb823c4dfa298ef35f91f63471c743193488"
 
 [[package]]
 name = "colorama"
@@ -771,7 +771,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "f2f08f848ee7712c748979b63b76c31ce74e06f1dc7fa68e793b2079842ca76c"
+content-hash = "0dc84ddd0259f043b88f61ae07c8517e1b93cc23e4ae415b17e1e5faeeeb9e83"
 
 [metadata.files]
 absl-py = [
