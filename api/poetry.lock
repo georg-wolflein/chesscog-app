@@ -90,8 +90,8 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "0.2.6"
-description = ""
+version = "0.2.7"
+description = "Recognise chess positions using computer vision."
 category = "main"
 optional = false
 python-versions = "^3.7"
@@ -115,8 +115,8 @@ tqdm = "^4.51.0"
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "0.2.6"
-resolved_reference = "d93ccb823c4dfa298ef35f91f63471c743193488"
+reference = "0.2.7"
+resolved_reference = "76d827d50cd982f2c89a7dbf8e4f402d1c461b51"
 
 [[package]]
 name = "colorama"
@@ -771,7 +771,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0dc84ddd0259f043b88f61ae07c8517e1b93cc23e4ae415b17e1e5faeeeb9e83"
+content-hash = "adf71ba99dc48e29eb579471917e1f6660d12b9c9c8df221f65ce2851e095e5d"
 
 [metadata.files]
 absl-py = [
