@@ -27,6 +27,7 @@ export default function Faq() {
           pipeline from start to finish{" "}
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://docs.google.com/viewer?url=https://github.com/georgw777/chesscog-report/raw/master/report.pdf"
           >
             here
@@ -45,7 +46,7 @@ export default function Faq() {
         <h4>Why is it so slow?</h4>
         <p>
           The inference runs on a free server hosted on{" "}
-          <a target="_blank" href="https://www.heroku.com">
+          <a target="_blank" rel="noreferrer" href="https://www.heroku.com">
             Heroku
           </a>
           . It isn't equipped with a GPU and the CPU isn't that fast either, so
@@ -64,6 +65,7 @@ export default function Faq() {
           Chapter 5 in my{" "}
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://docs.google.com/viewer?url=https://github.com/georgw777/chesscog-report/raw/master/report.pdf"
           >
             master thesis
@@ -73,12 +75,16 @@ export default function Faq() {
           position. However, that involves training the neural networks which
           requires a GPU. Thus, I can't make that available as a service to
           everyone using the infrastructure in{" "}
-          <a target="_blank" href="https://www.heroku.com">
+          <a target="_blank" rel="noreferrer" href="https://www.heroku.com">
             Heroku
           </a>
           's free tier. Nevertheless, you could set up the chess recognition
           yourself and fine-tune it to your own chess set: the code is available{" "}
-          <a target="_blank" href="https://github.com/georgw777/chesscog">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/georgw777/chesscog"
+          >
             here
           </a>
           .
