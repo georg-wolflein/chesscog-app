@@ -1,10 +1,5 @@
 @import "styles/colors";
 
-.App {
-  background: $background-color;
-  color: $foreground-color;
-}
-
 .App-header {
   text-align: center;
   background: linear-gradient(
@@ -59,15 +54,4 @@
 .App-main {
   min-height: 100vh;
   padding-top: 10vh;
-}
-
-.App-footer {
-  min-height: 20vh;
-  padding: 1em 0;
-  background-color: $background-dark;
-  font-size: calc(10px + 1vmin);
-  a {
-    color: $highlight-color;
-    text-decoration: none;
-  }
 }

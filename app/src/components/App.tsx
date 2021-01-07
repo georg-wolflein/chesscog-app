@@ -1,16 +1,13 @@
 import React from "react";
 import "./App.scss";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { Link, Element } from "react-scroll";
 import Recognition from "./Recognition";
-import Version from "./Version";
 import GitHubRibbon from "./GitHubRibbon";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
         <GitHubRibbon />
         <h1>
@@ -42,21 +39,6 @@ function App() {
       <Element name="get-started">
         <Recognition />
       </Element>
-      <footer className="App-footer">
-        <Container>
-          <Row>
-            <Col>
-              created by{" "}
-              <a href="https://github.com/georgw777">Georg Wölflein</a> in 2020
-            </Col>
-            <Col style={{ textAlign: "right" }}>
-              <Version />
-            </Col>
-          </Row>
-        </Container>
-      </footer>
     </div>
   );
 }
-
-export default App;

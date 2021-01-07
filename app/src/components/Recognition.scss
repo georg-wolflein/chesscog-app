@@ -101,12 +101,4 @@
   font-size: calc(12px + 1vmin);
   margin-top: 3px;
   margin-bottom: 0;
-
-  a {
-    color: $highlight-color;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }

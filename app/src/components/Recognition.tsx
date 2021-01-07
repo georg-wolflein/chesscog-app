@@ -10,6 +10,7 @@ import { API, IPrediction, Turn } from "../core/api";
 import FileUpload from "./FileUpload";
 import ImagePreview from "./ImagePreview";
 import resizeImage from "../utils/resize";
+import { Link } from "react-router-dom";
 
 interface RecognitionProps {}
 interface RecognitionState {
@@ -210,6 +211,10 @@ class Recognition extends React.Component<RecognitionProps, RecognitionState> {
                       here
                     </a>
                     .
+                  </p>
+                  <p className="Recognition-help">
+                    For more information, check out the{" "}
+                    <Link to="/faq">FAQ</Link>.
                   </p>
                 </div>
               )}

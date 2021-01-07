@@ -1,0 +1,8 @@
+@import "styles/colors";
+
+.Footer {
+  min-height: 20vh;
+  padding: 1em 0;
+  background-color: $background-dark;
+  font-size: calc(10px + 1vmin);
+}

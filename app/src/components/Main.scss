@@ -1,0 +1,15 @@
+@import "styles/colors";
+
+.Main {
+  background: $background-color;
+  color: $foreground-color;
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+  &:hover {
+    color: $highlight-color;
+    text-decoration: none;
+  }
+}
