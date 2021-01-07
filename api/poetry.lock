@@ -90,7 +90,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "0.2.7"
+version = "1.0.0"
 description = "Recognise chess positions using computer vision."
 category = "main"
 optional = false
@@ -112,11 +112,14 @@ torch = "^1.6.0"
 torchvision = "^0.7.0"
 tqdm = "^4.51.0"
 
+[package.extras]
+docs = ["sphinx (>=3.4.1,<4.0.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "m2r2 (>=0.2.7,<0.3.0)"]
+
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "0.2.7"
-resolved_reference = "76d827d50cd982f2c89a7dbf8e4f402d1c461b51"
+reference = "1.0.0"
+resolved_reference = "137ff94de90317b902accf44659263bb03ffd89b"
 
 [[package]]
 name = "colorama"
@@ -771,7 +774,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "adf71ba99dc48e29eb579471917e1f6660d12b9c9c8df221f65ce2851e095e5d"
+content-hash = "8ba7ff7eeb9394b63aede31c1270d983a031d93c92eee90c3a7b12146e520bf6"
 
 [metadata.files]
 absl-py = [
