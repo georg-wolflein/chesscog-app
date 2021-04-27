@@ -90,11 +90,11 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "chesscog"
-version = "1.0.0"
+version = "1.0.1"
 description = "Recognise chess positions using computer vision."
 category = "main"
 optional = false
-python-versions = "^3.7"
+python-versions = "^3.8"
 develop = false
 
 [package.dependencies]
@@ -103,6 +103,7 @@ googledrivedownloader = "^0.4"
 matplotlib = "^3.3.2"
 numpy = "^1.19.2"
 opencv-python = "^4.4.0"
+osfclient = "^0.0.5"
 pandas = "^1.1.3"
 pillow = "^7.2.0"
 recap = "^0.1.1"
@@ -118,8 +119,8 @@ docs = ["sphinx (>=3.4.1,<4.0.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "m2r2 (>
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "1.0.0"
-resolved_reference = "137ff94de90317b902accf44659263bb03ffd89b"
+reference = "1.0.1"
+resolved_reference = "df46952e39a783a2744caba10d9cb9dc40f5e20a"
 
 [[package]]
 name = "colorama"
@@ -339,6 +340,19 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 numpy = ">=1.17.3"
+
+[[package]]
+name = "osfclient"
+version = "0.0.5"
+description = "An OSF command-line library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = "*"
+six = "*"
+tqdm = "*"
 
 [[package]]
 name = "packaging"
@@ -774,7 +788,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "8ba7ff7eeb9394b63aede31c1270d983a031d93c92eee90c3a7b12146e520bf6"
+content-hash = "ca6933a1a906a342267acddee714017fc945ee54655a2a4b717f1515fee9eb0f"
 
 [metadata.files]
 absl-py = [
@@ -1058,6 +1072,10 @@ opencv-python = [
     {file = "opencv_python-4.4.0.46-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:744e9ae2fb4c8574e6d4a762146b4d0984bdec60b98480fc54a363c03a07a1ac"},
     {file = "opencv_python-4.4.0.46-cp39-cp39-win32.whl", hash = "sha256:7fe81d08df4eb5dc4c6aa5f09888b6fd390fce5fa7d5624a98cac890b9aa6181"},
     {file = "opencv_python-4.4.0.46-cp39-cp39-win_amd64.whl", hash = "sha256:0548981fe189e0d57b9cc65066b66fd70d4bc84ea906f349a63d9098e1b911c6"},
+]
+osfclient = [
+    {file = "osfclient-0.0.5-py2.py3-none-any.whl", hash = "sha256:2351a61785f2ad662f1f4e7775d77dc4c185379473553f46fbfcfb65da819b80"},
+    {file = "osfclient-0.0.5.tar.gz", hash = "sha256:47c92bbdce57ecc0ed87eabe459025cc549080c48b28ebc86bfc5d82545a75c8"},
 ]
 packaging = [
     {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
