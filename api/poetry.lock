@@ -119,8 +119,8 @@ docs = ["sphinx (>=3.4.1,<4.0.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "m2r2 (>
 [package.source]
 type = "git"
 url = "https://github.com/georgw777/chesscog.git"
-reference = "1.0.1"
-resolved_reference = "df46952e39a783a2744caba10d9cb9dc40f5e20a"
+reference = "1.0.2"
+resolved_reference = "3b9e326c2087bd724083617042699278e5b81038"
 
 [[package]]
 name = "colorama"
@@ -788,7 +788,7 @@ PyYAML = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ca6933a1a906a342267acddee714017fc945ee54655a2a4b717f1515fee9eb0f"
+content-hash = "9e8258ab87e88053aee6acdbb01b9172057cc4fa6a56e1ba1fcd74934e2fc268"
 
 [metadata.files]
 absl-py = [
