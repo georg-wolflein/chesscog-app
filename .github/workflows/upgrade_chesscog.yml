@@ -23,7 +23,7 @@ jobs:
         run: poetry install
         working-directory: api
       - name: Install new chesscog version
-        run: poetry add git+https://github.com/georgw777/chesscog.git#${{ github.event.client_payload.chesscog_version }}
+        run: poetry add git+https://github.com/georg-wolflein/chesscog.git#${{ github.event.client_payload.chesscog_version }}
         working-directory: api
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3

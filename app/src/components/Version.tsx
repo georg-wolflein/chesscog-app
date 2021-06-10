@@ -18,7 +18,7 @@ export default class Version extends React.Component<{}, IVersion> {
             <a
               target="_blank"
               rel="noreferrer"
-              href={`https://github.com/georgw777/chesscog-app/commit/${this.state.app}`}
+              href={`https://github.com/georg-wolflein/chesscog-app/commit/${this.state.app}`}
             >
               @{this.state.app.substr(0, 7)}
             </a>

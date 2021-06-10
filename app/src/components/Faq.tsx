@@ -28,7 +28,7 @@ export default function Faq() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/georgw777/chesscog-report/raw/master/report.pdf"
+            href="https://github.com/georg-wolflein/chesscog-report/raw/master/report.pdf"
           >
             here
           </a>
@@ -66,7 +66,7 @@ export default function Faq() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/georgw777/chesscog-report/raw/master/report.pdf"
+            href="https://github.com/georg-wolflein/chesscog-report/raw/master/report.pdf"
           >
             master thesis
           </a>{" "}
@@ -83,7 +83,7 @@ export default function Faq() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/georgw777/chesscog"
+            href="https://github.com/georg-wolflein/chesscog"
           >
             here
           </a>
