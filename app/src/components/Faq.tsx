@@ -23,19 +23,30 @@ export default function Faq() {
         </p>
         <h4>How does it work exactly?</h4>
         <p>
-          Check out my master thesis, it details the entire chess recognition
-          pipeline from start to finish{" "}
+          Check out
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.mdpi.com/2313-433X/7/6/94"
+          >
+            this journal article
+          </a>
+          , which details the chess recognition pipeline from start to finish.
+          On the other hand, my{" "}
           <a
             target="_blank"
             rel="noreferrer"
             href="https://github.com/georg-wolflein/chesscog-report/raw/master/report.pdf"
           >
-            here
+            master thesis
           </a>
-          . The gist of it is that the board itself is localised using
-          traditional computer vision techniques such as Canny edge detection
-          and the Hough transform, and then two Convolutional Neural Networks
-          (CNNs) classify the squares in order to produce a final prediction.
+          explains the process in much greater detail.
+        </p>
+        <p>
+          The gist of it is that the board itself is localised using traditional
+          computer vision techniques such as Canny edge detection and the Hough
+          transform, and then two Convolutional Neural Networks (CNNs) classify
+          the squares in order to produce a final prediction.
         </p>
         <h4>How should I capture the image of the chessboard?</h4>
         <p>
