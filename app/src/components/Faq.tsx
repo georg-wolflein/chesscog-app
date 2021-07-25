@@ -33,7 +33,11 @@ export default function Faq() {
           </a>
           , which details the chess recognition pipeline from start to finish
           (or{" "}
-          <a target="_blank" rel="noreferrer" href="">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://georg.woelflein.eu/blog/2021/chesscog/"
+          >
             this blog post
           </a>{" "}
           for a more high-level overview). On the other hand, my{" "}
