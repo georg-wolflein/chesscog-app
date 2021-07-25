@@ -31,8 +31,12 @@ export default function Faq() {
           >
             this journal article
           </a>
-          , which details the chess recognition pipeline from start to finish.
-          On the other hand, my{" "}
+          , which details the chess recognition pipeline from start to finish
+          (or{" "}
+          <a target="_blank" rel="noreferrer" href="">
+            this blog post
+          </a>{" "}
+          for a more high-level overview). On the other hand, my{" "}
           <a
             target="_blank"
             rel="noreferrer"

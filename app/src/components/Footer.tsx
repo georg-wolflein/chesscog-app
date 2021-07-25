@@ -11,9 +11,8 @@ export default function Footer() {
       <Container>
         <Row>
           <Col>
-            created by{" "}
-            <a href="https://github.com/georg-wolflein">Georg Wölflein</a> in
-            2020
+            created by <a href="https://georg.woelflein.eu">Georg Wölflein</a>{" "}
+            in 2020
           </Col>
           <Col style={{ textAlign: "right" }}>
             <Version />
